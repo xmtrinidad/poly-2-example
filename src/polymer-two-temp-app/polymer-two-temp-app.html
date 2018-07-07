@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="create-feature.html">
+<link rel="import" href="collaborate-feature.html">
+<link rel="import" href="contact-us-feature.html">
+<link rel="import" href="contact-us-feature.html">
+
+
+<dom-module id="polymer-two-temp-app">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+    <!-- Create Section -->
+    <section>
+      <create-feature></create-feature>
+    </section>
+
+    <!-- Collaborate Section -->
+    <section>
+      <collaborate-feature></collaborate-feature>
+    </section>
+
+    <!-- Contact Section-->
+    <section>
+      <contact-us-feature></contact-us-feature>
+    </section>
+
+  </template>
+
+  <script>
+    class PolymerTwoTempApp extends Polymer.Element {
+      static get is() { return 'polymer-two-temp-app'; }
+    }
+
+    window.customElements.define(PolymerTwoTempApp.is, PolymerTwoTempApp);
+  </script>
+</dom-module>

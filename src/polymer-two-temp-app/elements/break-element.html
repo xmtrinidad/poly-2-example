@@ -1,0 +1,22 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles.html">
+
+<dom-module id="break-element">
+  <template>
+    <style include="shared-styles">
+      .Break-line {
+        width: 30.76px;
+        height: 10.02px;
+        background-color: #1194F6;
+      }
+    </style>
+    <div class="Break-line"></div>
+  </template>
+  <script>
+    class BreakElement extends Polymer.Element {
+      static get is() { return 'break-element'; }
+    }
+
+    window.customElements.define(BreakElement.is, BreakElement);
+  </script>
+</dom-module>

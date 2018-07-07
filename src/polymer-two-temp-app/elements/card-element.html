@@ -1,0 +1,35 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../shared-styles.html">
+<link rel="import" href="break-element.html">
+
+<dom-module id="card-element">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">[[card.title]]</h5>
+        <p class="card-text">[[card.body]]</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </template>
+  <script>
+    class CardElement extends Polymer.Element {
+      static get is() { return 'card-element'; }
+      static get properties() {
+        return {
+          card: {
+            type: Object
+          }
+        };
+      }
+    }
+
+    window.customElements.define(CardElement.is, CardElement);
+  </script>
+</dom-module>

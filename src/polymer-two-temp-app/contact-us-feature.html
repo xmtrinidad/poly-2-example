@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="elements/headline-element.html">
+
+<dom-module id="contact-us-feature">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      .Create {}
+    </style>
+
+    <div class="Contact-us">
+      <headline-element headline=[[headline]]></headline-element>
+      <div class="container">
+        <h3>Contact Us!</h3>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    class ContactUsFeature extends Polymer.Element {
+      static get is() { return 'contact-us-feature'; }
+      static get properties() {
+        return {
+          headline: {
+            type: Object,
+            value() {
+              return {
+                title: "Not what you're looking for?",
+                info: 'Academic Web Services is dedicated in providing you with curricular multi-media for classroom success.'
+              };
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(ContactUsFeature.is, ContactUsFeature);
+  </script>
+</dom-module>

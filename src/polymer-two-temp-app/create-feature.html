@@ -1,0 +1,69 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="elements/headline-element.html">
+<link rel="import" href="elements/card-element.html">
+
+<dom-module id="create-feature">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      .Create {}
+    </style>
+
+    <div class="Create">
+      <headline-element headline=[[headline]]></headline-element>
+      <div class="container">
+        <template is="dom-repeat" items="[[cards]]" as="card">
+          <card-element card="[[card]]"></card-element>
+        </template>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    class CreateFeature extends Polymer.Element {
+      static get is() { return 'create-feature'; }
+      static get properties() {
+        return {
+          headline: {
+            type: Object,
+            value() {
+              return {
+                title: 'Create',
+                info: 'Our authering tools help you to create multimedia that fits with your course design.'
+              };
+            }
+          },
+          cards: {
+            type: Array,
+            value() {
+              return [
+                {
+                  title: 'Card Title One',
+                  body: 'GCU has created a testing platform thats flexible and robust. Creating tests and quizes has never been easier.'
+                },
+                {
+                  title: 'Card Title Two',
+                  body: 'GCU has created a testing platform thats flexible and robust. Creating tests and quizes has never been easier.'
+                },
+                {
+                  title: 'Card Title Three',
+                  body: 'GCU has created a testing platform thats flexible and robust. Creating tests and quizes has never been easier.'
+                },
+                {
+                  title: 'Card Title Four',
+                  body: 'GCU has created a testing platform thats flexible and robust. Creating tests and quizes has never been easier.'
+                }
+              ]
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(CreateFeature.is, CreateFeature);
+  </script>
+</dom-module>

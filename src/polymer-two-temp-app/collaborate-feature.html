@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="elements/headline-element.html">
+
+<dom-module id="collaborate-feature">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      .Create {}
+    </style>
+
+    <div class="Collaborate">
+      <headline-element headline=[[headline]]></headline-element>
+      <div class="container">
+        <h3>Congratulations here's your links!</h3>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    class CollaborateFeature extends Polymer.Element {
+      static get is() { return 'collaborate-feature'; }
+      static get properties() {
+        return {
+          headline: {
+            type: Object,
+            value() {
+              return {
+                title: 'Collaborate',
+                info: 'Adding media to your course has never been easier. Our authoring tools will auto generate a media element based on your choice of deployment.'
+              };
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(CollaborateFeature.is, CollaborateFeature);
+  </script>
+</dom-module>
