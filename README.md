@@ -27,7 +27,7 @@ Below is a snippet of how to create a component in Polymer 2:
   <script>
     class MyElement extends Polymer.Element {
       static get is() { return 'my-element'; }
-      static get properties() { }
+      static get properties() { return {} }
     }
 
     window.customElements.define(MyElement.is, MyElement);
